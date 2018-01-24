@@ -1,0 +1,5 @@
+Duck.o: Duck.h Duck.cpp
+	g++ -c Duck.cpp
+
+clean:
+	rm *.o

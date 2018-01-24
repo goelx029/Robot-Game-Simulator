@@ -1,0 +1,141 @@
+TODO :-
+  -- Check that the motion_handlers save the value of the angle_delta_, max_speed_ etc for Reset
+
+  // if (sensor_distress_.get_sd_activated()) {
+  //   std::cout <<"In Player ";
+  //   printf("sensor_distress_ activated\n");
+  // }
+  // if (sensor_proximity_.get_sp_activated()) {
+  //   std::cout << "In Player ";
+  //   printf("sensor_proximity_ activated\n");
+  // }
+  // if (sensor_entity_type_.get_senttyp_activated()) {
+  //   std::cout << "In Player ";
+  //   switch (sensor_entity_type_.get_type()) {
+  //     case kPlayer:
+  //     std::cout << "Player Nearby\n";
+  //     break;
+  //     case kSuperBot:
+  //     std::cout << "SuperBot Nearby\n";
+  //     break;
+  //     case kHomeBase:
+  //     std::cout << "HomeBase Nearby\n";
+  //     break;
+  //     case kRechargeStation:
+  //     std::cout << "RechargeStation Nearby\n";
+  //     break;
+  //     case kWall:
+  //     std::cout << "Wall Nearby\n";
+  //     break;
+  //     default:
+  //     break;
+  //   }
+  // }
+
+  // if (sensor_touch_.get_st_activated()) {
+  //   switch (sensor_entity_type_.get_sensed_type()) {
+  //     case kPlayer:
+  //     // std::cout << "Robot <-> Player" << '\n';
+  //     motion_handler_.set_speed(0);
+  //     set_distress(true);
+  //     break;
+  //     case kSuperBot:
+  //     case kRobot:
+  //     // std::cout << "Robot <-> Robot/SuperBot" << '\n';
+  //     motion_handler_.set_speed(motion_handler_.get_max_speed());
+  //     set_distress(false);
+  //     break;
+  //     case kHomeBase:
+  //     motion_handler_.set_speed(motion_handler_.get_max_speed());
+  //     set_distress(false);
+  //     // std::cout << "Robot <-> HomeBase" << '\n';
+  //     // std::cout << "Convert to SuperBot" << '\n';
+  //     default:
+  //     break;
+  //   }
+  // }
+  // if (sensor_proximity_.get_sp_activated()) {
+  //   switch (sensor_proximity_.get_sensed_type()) {
+  //     case kPlayer:
+  //     case kSuperBot:
+  //     case kRechargeStation:
+  //     case kObstacle: {
+  //       if (motion_handler_.get_heading_angle() > sensor_proximity_.get_angle_contact())
+  //         motion_handler_.set_heading_angle(motion_handler_.get_heading_angle() + 5);
+  //       else
+  //         motion_handler_.set_heading_angle(motion_handler_.get_heading_angle() - 5);
+  //       double speed = motion_handler_.get_speed();
+  //       double dist = sensor_proximity_.get_output();
+  //       double new_speed = speed - (20/dist)*speed;
+  //       motion_handler_.set_speed(new_speed);
+  //     }
+  //     break;
+  //     case kRobot: {
+  //       if (!sensor_distress_.get_sd_activated()) {
+  //         if (motion_handler_.get_heading_angle() > sensor_proximity_.get_angle_contact())
+  //           motion_handler_.set_heading_angle(motion_handler_.get_heading_angle() + 5);
+  //         else
+  //           motion_handler_.set_heading_angle(motion_handler_.get_heading_angle() - 5);
+  //         double speed = motion_handler_.get_speed();
+  //         double dist = sensor_proximity_.get_output();
+  //         double new_speed = speed - (20/dist)*speed;
+  //         motion_handler_.set_speed(new_speed);
+  //       } else {
+  //         double a_of_c = sensor_proximity_.get_angle_contact();
+  //         motion_handler_.set_heading_angle(a_of_c);
+  //       }
+  //     }
+  //     break;
+  //     case kHomeBase:
+  //     break;
+  //     default:
+  //     break;
+  //   }
+  // } else {
+  //   if (!get_distress())
+  //     motion_handler_.set_speed(motion_handler_.get_max_speed());
+  // }
+
+  // if (sensor_proximity_.get_sp_activated()) {
+  //   switch (sensor_proximity_.get_sensed_type()) {
+  //     case kPlayer: {
+  //       double a_of_c = sensor_proximity_.get_angle_contact();
+  //       motion_handler_.set_heading_angle(a_of_c);
+  //     }
+  //     break;
+  //     case kSuperBot:
+  //     case kRechargeStation:
+  //     case kHomeBase:
+  //     case kObstacle: {
+  //       if (motion_handler_.get_heading_angle() > sensor_proximity_.get_angle_contact())
+  //         motion_handler_.set_heading_angle(motion_handler_.get_heading_angle() + 5);
+  //       else
+  //         motion_handler_.set_heading_angle(motion_handler_.get_heading_angle() - 5);
+  //       double speed = motion_handler_.get_speed();
+  //       double dist = sensor_proximity_.get_output();
+  //       double new_speed = speed - (20/dist)*speed;
+  //       motion_handler_.set_speed(new_speed);
+  //     }
+  //     break;
+  //     case kRobot: {
+  //       if (!sensor_distress_.get_sd_activated()) {
+  //         if (motion_handler_.get_heading_angle() > sensor_proximity_.get_angle_contact())
+  //           motion_handler_.set_heading_angle(motion_handler_.get_heading_angle() + 5);
+  //         else
+  //           motion_handler_.set_heading_angle(motion_handler_.get_heading_angle() - 5);
+  //         double speed = motion_handler_.get_speed();
+  //         double dist = sensor_proximity_.get_output();
+  //         double new_speed = speed - (20/dist)*speed;
+  //         motion_handler_.set_speed(new_speed);
+  //       } else {
+  //         double a_of_c = sensor_proximity_.get_angle_contact();
+  //         motion_handler_.set_heading_angle(a_of_c);
+  //       }
+  //     }
+  //     break;
+  //     default:
+  //     break;
+  //   }
+  // } else {
+  //   motion_handler_.set_speed(motion_handler_.get_max_speed());
+  // }
